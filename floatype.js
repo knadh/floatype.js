@@ -75,7 +75,7 @@ export function floatype(el, options = {}) {
 		box = document.createElement("div");
 		Object.assign(box.style, {
 			width: window.getComputedStyle(el).width,
-			position: "absolute",
+			position: "fixed",
 			left: `${el.offsetLeft}px`,
 			top: `${el.offsetTop + el.offsetHeight}px`
 		});
