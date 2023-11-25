@@ -1,17 +1,17 @@
 {
-  "name": "@knadh/autocomp",
-  "version": "0.1.2",
-  "description": "A tiny, zero-dependency, autocomplete / autosuggestion library.",
-  "main": "autocomp.js",
+  "name": "@knadh/floatype",
+  "version": "0.1.0",
+  "description": "A tiny, zero-dependency, floating autocomplete / autosuggestion widget for textarea.",
+  "main": "floatype.js",
   "files": [
-    "autocomp.js"
+    "floatype.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knadh/autocomp.js.git"
+    "url": "git+https://github.com/knadh/floatype.js.git"
   },
   "keywords": [
     "autocomplete",
@@ -23,9 +23,9 @@
   "author": "Kailash Nadh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/knadh/autocomp.js/issues"
+    "url": "https://github.com/knadh/floatype.js/issues"
   },
-  "homepage": "https://github.com/knadh/autocomp.js#readme",
+  "homepage": "https://github.com/knadh/floatype.js#readme",
   "publishConfig": {
     "access": "public"
   }
