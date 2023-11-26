@@ -1,6 +1,6 @@
 # floatype.js
 
-A super tiny Javascript autocomplete / autosuggestion library. Zero dependencies and ~1200 bytes minified + gzipped.
+A super tiny Javascript autocomplete / autosuggestion library for rendering floating suggestion widgets in textareas. Zero dependencies and ~1200 bytes minified + gzipped.
 
 [**View demo**](https://knadh.github.io/floatype.js)
 
@@ -29,5 +29,8 @@ Check the [demo source](https://github.com/knadh/floatype.js/blob/master/docs/in
 
 ### ES6 module
 Check the [demo source](https://github.com/knadh/floatype.js/blob/master/docs/index.html) to use the lib in `<script>` directly on an HTML page.
+
+> For dropdown suggestions on input boxes, see [autocomp.js](https://github.com/knadh/autocomp.js)
+
 
 Licensed under the MIT License.
