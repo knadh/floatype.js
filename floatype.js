@@ -44,6 +44,7 @@ export function floatype(el, options = {}) {
 			case 38: return navigate(-1, e); // Up arrow.
 			case 40: return navigate(1, e); // Down arrow
 			case 9: // Tab
+			case 32: // Space
 			case 13: // Enter
 				e.preventDefault();
 				select(cur);
