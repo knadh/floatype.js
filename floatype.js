@@ -162,14 +162,14 @@ export function floatype(el, options = {}) {
 
 		// Update shadow div content up to the cursor position
 		const cl = "floatype-caret";
-		shadow.innerHTML = el.value.substring(0, start) + `<span id="${cl}" style="display: inline-block;"></span>` + el.value.substring(start);
+		shadow.innerHTML = el.value.substring(0, start) + `<span id="${cl}" style="display: inline-block;">${el.value.substring(start)}</span>`;
 
 		const m = document.getElementById(cl);
 		const rect = el.getBoundingClientRect();
 
 		return {
 			x: rect.left + m.offsetLeft - el.scrollLeft, 
-			y: rect.top + m.offsetTop - el.scrollTop + 10
+			y: rect.top + m.offsetTop - el.scrollTop + (parseInt(getComputedStyle(m).height) + 5)
 		};
 	}
 
