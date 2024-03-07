@@ -188,6 +188,12 @@ export function floatype(el, options = {}) {
 		el.value = el.value.substring(0, start) + val + (el.value[el.selectionStart] !== " " ? " " : "") + el.value.substring(el.selectionStart);
 		el.setSelectionRange(start + val.length + 1, start + val.length + 1);
 	}
+
+	return {
+		unbind: function() {
+			["input", "keydown", "blur"].forEach(k => el.removeEventListener(k, handleEvent));
+		}
+	}
 }
 
 export default floatype;

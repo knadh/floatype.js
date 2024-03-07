@@ -92,7 +92,7 @@
 
 	// Example 1.
 	// Simple string results.
-	floatype(document.querySelector("textarea"), {
+	const f = floatype(document.querySelector("textarea"), {
 		onQuery: async (val) => {
 			// This callback returns an array of search results.
 			// Typically, this will be a server side fetch() request.
@@ -105,6 +105,8 @@
 			return WORDS.filter(s => s.startsWith(q)).slice(0, 10);
 		}
 	});
+
+	// f.unbind() to remove the binding.
 </script>
 </body>
 </html>
