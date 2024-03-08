@@ -192,6 +192,8 @@ export function floatype(el, options = {}) {
 	return {
 		unbind: function() {
 			["input", "keydown", "blur"].forEach(k => el.removeEventListener(k, handleEvent));
+			destroy();
+			shadow.remove();
 		}
 	}
 }

@@ -77,6 +77,7 @@
 		<br />Zero dependencies (~1200 bytes minified + gzipped). Type below to try.
 	</p>
 	<textarea autofocus></textarea>
+	<p><button>Toggle bind/unbind</button></p>
 
 	<p>For dropdown suggestions on inputs, see <a href="https://github.com/knadh/autocomp.js">autocomp.js</a></p>
 	
@@ -92,21 +93,34 @@
 
 	// Example 1.
 	// Simple string results.
-	const f = floatype(document.querySelector("textarea"), {
-		onQuery: async (val) => {
-			// This callback returns an array of search results.
-			// Typically, this will be a server side fetch() request.
-			// Example:
-			// 		const resp = await fetch(`/search?q=${query}`);
-			// 		const res = await response.json();  
-			//		return res;
+	function bind() {
+		return floatype(document.querySelector("textarea"), {
+			onQuery: async (val) => {
+				// This callback returns an array of search results.
+				// Typically, this will be a server side fetch() request.
+				// Example:
+				// 		const resp = await fetch(`/search?q=${query}`);
+				// 		const res = await response.json();  
+				//		return res;
 
-			const q = val.trim().toLowerCase();
-			return WORDS.filter(s => s.startsWith(q)).slice(0, 10);
+				const q = val.trim().toLowerCase();
+				return WORDS.filter(s => s.startsWith(q)).slice(0, 10);
+			}
+		});
+	}
+
+	window._fl = bind();
+
+	document.querySelector("button").onclick = (e) => {
+		if (window._fl) {
+			window._fl.unbind();
+			window._fl = null;
+		} else {
+			window._fl = bind();
 		}
-	});
 
-	// f.unbind() to remove the binding.
+		document.querySelector("textarea").focus();
+	}
 </script>
 </body>
 </html>

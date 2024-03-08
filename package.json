@@ -1,6 +1,6 @@
 {
   "name": "@knadh/floatype",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A tiny, zero-dependency, floating autocomplete / autosuggestion widget for textarea.",
   "main": "floatype.js",
   "files": [
