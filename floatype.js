@@ -85,14 +85,17 @@ export function floatype(el, options = {}) {
 
 		box.classList.add("floatype");
 		el.parentNode.insertBefore(box, el.nextSibling);
+		window.addEventListener("scroll", adjustBoxPosition);
 	}
-
+	function adjustBoxPosition(){
+		const coords = getCaret(el);
+    	box.style.left = `${coords.x}px`;
+    	box.style.top = `${coords.y}px`;
+	}
 	function renderResults() {
 		box.innerHTML = "";
 
-		const coords = getCaret(el);
-		box.style.left = `${coords.x}px`;
-		box.style.top = `${coords.y}px`;
+		adjustBoxPosition()
 
 		items.forEach((item, idx) => {
 			const div = document.createElement("div");
@@ -134,6 +137,7 @@ export function floatype(el, options = {}) {
 		if (box) {
 			box.remove();
 			box = null;
+			window.removeEventListener("scroll", adjustBoxPosition);
 		}
 	}
 
